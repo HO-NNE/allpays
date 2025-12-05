@@ -38,8 +38,8 @@
    git clone https://github.com/HO-NNE/allpays
 
 2. 의존성설치
-   cd allpays-dashboard
-   npm install
+   -cd allpays
+   -npm install
 
 3. 개발서버 실행
    npm run dev
