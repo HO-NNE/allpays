@@ -345,7 +345,7 @@ function App() {
               />
             </div>
           </div>
-          <div className="w-[2px] h-[15px] bg-[##b7b7b7]"></div>
+          <div className="w-[2px] h-[15px] bg-[#b7b7b7]"></div>
           <div className="flex items-center w-[30%] justify-center ">
             <div className="text-[35px] text-[#2E66F8] font-semibold">
               {payments.length}

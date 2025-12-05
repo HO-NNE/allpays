@@ -1,73 +1,53 @@
-# React + TypeScript + Vite
+# AllPays 대시보드
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+가맹점 결제 데이터를 관리하고 시각화하는 대시보드 애플리케이션입니다.
 
-Currently, two official plugins are available:
+## 목차
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [디자인 설명](#디자인-설명)
+- [주요 기능](#주요-기능)
+- [사용 기술](#사용-기술)
+- [설치 방법](#설치-방법)
+- [사용 방법](#사용-방법)
+- [화면 예시](#화면-예시)
 
-## React Compiler
+## 디자인
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+레이아웃은 가맹점과 결제 영역을 명확히 구분하여 직관적으로 정보를 확인할 수 있도록 구성했습니다.컬러는 파랑색 계열을 메인으로, 회색을 보조 색상으로 사용해 깔끔하고 안정적인 느낌을 주었습니다.카드는 라운딩과 그림자 효과로 영역을 명확히 구분하고, 아이콘과 컬러 태그로 직관적인 데이터 시각화를 하였습니다
 
-## Expanding the ESLint configuration
+## 주요 기능
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **결제 & 가맹점 리스트 시각화**: 거래 내역 테이블과 가맹점 목록을 직관적으로 확인
+- **필터링**: 결제 방법(단말기/모바일/온라인등..)과 결제 상태(완료/환불 등..)별 필터 지원
+- **가맹점 페이지네이션**: 많은 가맹점 데이터를 효율적으로 관리
+- **월별 결제 파이 차트**: 카테고리별 월간 결제 데이터 시각화
+- **가맹점 카드 컴포넌트**: 상태와 결제 요약 정보를 보여주는 작은 카드 UI
+- **가맹점 상세 조회**: 코드와 업종 기반 검색, 클릭 시 상세 정보 확인
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 사용 기술
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- React + TypeScript
+- Ant Design, Tailwind CSS
+- Axios를 이용한 API 요청
+- Ant Design Charts로 파이 차트 시각화
+- Vite를 이용한 개발 환경 구축
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 설치 방법
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. 레포지토리 클론
+   git clone https://github.com/HO-NNE/allpays
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. 의존성설치
+   cd allpays-dashboard
+   npm install
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. 개발서버 실행
+   npm run dev
+
+## 사용방법
+
+- 가맹점 검색창에서 코드, 이름 선택후 검색
+- 가맹점 상태 필터
+- 결제 유형별 필터(DEVICE, ONLINE, VIRTUAL , BILLING ,MOBILE ) , 상태 필터 ( PENDING,SUCCESS,FAILED,CANCELLED)
+- 작은 카드에서 가맹점 결제 내역과 상태 확인
+- 월별 결제 분포를 파이 차트로 분석(이번달 전달확인)
