@@ -51,3 +51,8 @@
 - 결제 유형별 필터(DEVICE, ONLINE, VIRTUAL , BILLING ,MOBILE ) , 상태 필터 ( PENDING,SUCCESS,FAILED,CANCELLED)
 - 작은 카드에서 가맹점 결제 내역과 상태 확인
 - 월별 결제 분포를 파이 차트로 분석(이번달 전달확인)
+
+  
+## 화면 예시
+<img width="1910" height="912" alt="image" src="https://github.com/user-attachments/assets/0f75d5be-e470-4a1d-a13a-fda342e42d54" />
+
