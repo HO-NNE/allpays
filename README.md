@@ -34,15 +34,15 @@
 
 ## 설치 방법
 
-1. 레포지토리 클론
-   git clone https://github.com/HO-NNE/allpays
+1. 레포지토리 클론  
+git clone https://github.com/HO-NNE/allpays
 
-2. 의존성설치
-   -cd allpays
-   -npm install
+2. 의존성 설치  
+cd allpays  
+npm install
 
-3. 개발서버 실행
-   npm run dev
+3. 개발 서버 실행  
+npm run dev
 
 ## 사용방법
 
